@@ -59,6 +59,10 @@ General use case is for someone to run a report out of mongolab manually and uti
 
 When a kudos comes in it is stored in the mongo database.  If you use sendgrid you can email it to someones for distribution to manager and employee if wanted. 
 
+### todo's
+- add unit tests
+- add ci with free service (travis/circle)
+
 ### feature wish list
 - dashboard to manage kudos and assign value for drawings
 - make interactive app work
