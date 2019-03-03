@@ -1,0 +1,32 @@
+{
+  "name": "slack-genius",
+  "version": "1.0.0",
+  "description": "_A Slackbot that searches genius.com_",
+  "main": "index.js",
+  "dependencies": {
+    "@sendgrid/mail": "^6.3.1",
+    "body-parser": "^1.14.2",
+    "ejs": "2.3.3",
+    "express": "^4.16.3",
+    "geckoboard": "^1.2.0",
+    "giphy-js-sdk-core": "^1.0.5",
+    "moment": "^2.22.2",
+    "mongoose": "^5.2.5",
+    "request": "^2.87.0",
+    "slack": "^11.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mager/slack-genius.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mager/slack-genius/issues"
+  },
+  "homepage": "https://github.com/mager/slack-genius#readme"
+}
