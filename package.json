@@ -10,7 +10,7 @@
     "geckoboard": "^1.2.0",
     "giphy-js-sdk-core": "^1.0.5",
     "moment": "^2.22.2",
-    "mongoose": "^5.2.5",
+    "mongoose": "^5.4.16",
     "request": "^2.87.0",
     "slack": "^11.0.1"
   },
