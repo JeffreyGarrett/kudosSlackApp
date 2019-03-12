@@ -2,20 +2,23 @@ FROM node
 LABEL maintainer="jeffGarrett"
 LABEL env="test"
 ENV PORT=9001
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
-RUN echo "deb http://repo.mongodb.org/apt/debian stretch/mongodb-org/4.0 main" | tee /etc/apt/sources.list.d/mongodb-org-4.0.list
-RUN apt-get update
-RUN mkdir /mongodb
-VOLUME [ "/data/db" ] 
-WORKDIR /mongodb
-RUN apt-get install -y mongodb-org
-#RUN mongod start
 
-RUN mkdir /node 
+#adding mongodb
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4 
+RUN echo "deb http://repo.mongodb.org/apt/debian stretch/mongodb-org/4.0 main" | tee /etc/apt/sources.list.d/mongodb-org-4.0.list 
+RUN apt-get update 
+RUN mkdir /mongodb 
+RUN apt-get install -y mongodb-org  
+VOLUME [ "/data/db" ] 
+
+#adding node
+RUN  mkdir /node 
 WORKDIR /node
 RUN git clone https://github.com/JeffreyGarrett/kudosSlackApp.git
 WORKDIR /node/kudosSlackApp/
-RUN npm install
+RUN npm install 
+WORKDIR /node/kudosSlackApp/docker/single-container/
+
 EXPOSE ${PORT}
 
-CMD [ "executable" ]
+ENTRYPOINT [ "bash", "./node_mongo.sh" ] 
